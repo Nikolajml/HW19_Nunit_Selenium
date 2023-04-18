@@ -6,11 +6,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OpenQA.Selenium.Support.UI;
 
 namespace Nunit_Selenium
 {
     [TestFixture]
-    internal class Dropdown
+    public class Dropdown
     {
         WebDriver ChromeDriver { get; set; }
 
@@ -24,7 +25,10 @@ namespace Nunit_Selenium
         [Test]
         public void Test_C_Dropdown()
         {
-            
+            //ChromeDriver.Navigate().GoToUrl("http://the-internet.herokuapp.com/dropdown");
+
+            //IWebElement dropDown = ChromeDriver.FindElement(By.Id("dropdown"));
+            //dropDown.Click();            
         }
 
         [TearDown]
