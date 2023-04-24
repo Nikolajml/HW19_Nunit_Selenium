@@ -18,13 +18,12 @@ namespace Nunit_Selenium
         {
             ChromeDriver = new ChromeDriver();
             ChromeDriver.Manage().Window.Maximize();
+            ChromeDriver.Navigate().GoToUrl("http://the-internet.herokuapp.com/typos");
         }
 
         [Test]
         public void Test_F_Typos_part1()
         {
-            ChromeDriver.Navigate().GoToUrl("http://the-internet.herokuapp.com/typos");
-
             var textPart1 = ChromeDriver.FindElement(By.TagName("p"));
             var actualResultPart1 = textPart1.Text;
 
@@ -36,8 +35,6 @@ namespace Nunit_Selenium
         [Test]
         public void Test_F_Typos_part2()
         {
-            ChromeDriver.Navigate().GoToUrl("http://the-internet.herokuapp.com/typos");
-
             var textPart2 = ChromeDriver.FindElement(By.XPath($"//p[2]"));
             var actualResultPart2 = textPart2.Text;
 

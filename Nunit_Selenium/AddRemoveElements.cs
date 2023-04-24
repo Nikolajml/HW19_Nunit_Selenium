@@ -14,13 +14,12 @@ namespace Nunit_Selenium
         {
             ChromeDriver = new ChromeDriver();
             ChromeDriver.Manage().Window.Maximize();
+            ChromeDriver.Navigate().GoToUrl("http://the-internet.herokuapp.com/add_remove_elements/");
         }
 
         [Test]
         public void Test_A_Add_Remove_Elements()
-        {
-            ChromeDriver.Navigate().GoToUrl("http://the-internet.herokuapp.com/add_remove_elements/");
-                        
+        {                           
             IWebElement element = ChromeDriver.FindElement(By.XPath("//button[text()='Add Element']"));
             element.Click();
             element.Click();            

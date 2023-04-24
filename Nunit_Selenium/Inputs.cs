@@ -14,13 +14,12 @@ namespace Nunit_Selenium
         {
             ChromeDriver = new ChromeDriver();
             ChromeDriver.Manage().Window.Maximize();
+            ChromeDriver.Navigate().GoToUrl("http://the-internet.herokuapp.com/inputs");
         }
 
         [Test]
         public void Test_D_ArrowUp()
         {
-            ChromeDriver.Navigate().GoToUrl("http://the-internet.herokuapp.com/inputs");
-
             IWebElement input = ChromeDriver.FindElement(By.TagName("input"));
             input.SendKeys(Keys.ArrowUp);
             input.SendKeys(Keys.ArrowUp);
@@ -32,8 +31,6 @@ namespace Nunit_Selenium
         [Test]
         public void Test_D_ArrowDown()
         {
-            ChromeDriver.Navigate().GoToUrl("http://the-internet.herokuapp.com/inputs");
-
             IWebElement input = ChromeDriver.FindElement(By.TagName("input"));
             input.SendKeys(Keys.ArrowDown);
             input.SendKeys(Keys.ArrowDown);

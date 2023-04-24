@@ -20,13 +20,12 @@ namespace Nunit_Selenium
         {
             ChromeDriver = new ChromeDriver();
             ChromeDriver.Manage().Window.Maximize();
+            ChromeDriver.Navigate().GoToUrl("http://the-internet.herokuapp.com/checkboxes");
         }
 
         [Test]
         public void Test_B_Checkboxes() 
-        {
-            ChromeDriver.Navigate().GoToUrl("http://the-internet.herokuapp.com/checkboxes");                        
-                        
+        {                       
             List<IWebElement> elements = ChromeDriver.FindElements(By.CssSelector("[type=checkbox]")).ToList();            
             var checkBox1_Attribut1 = elements[0].GetAttribute("");
             Assert.IsNull(checkBox1_Attribut1);
